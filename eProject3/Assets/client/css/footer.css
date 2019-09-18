@@ -1,0 +1,30 @@
+.top-footer{
+    padding: 40px 0;
+    background: #EE836E;
+    color: #ffffff;
+}
+.mid-header{
+    background: #283E56;
+    padding: 40px 0;
+    color:  rgb(134, 154, 175);;
+    position: relative;
+    z-index: 1;
+}
+.bottom-footer{
+    padding: 20px 0;
+    background: #22354A;
+    color: #ffffff;
+}
+
+.bottom-footer i{
+    width: 25px;
+}
+.section-bg{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    background: #2F4761;
+}

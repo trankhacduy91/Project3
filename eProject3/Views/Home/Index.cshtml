@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var totalUser = ViewBag.TotalUser;
+    var totalPost = ViewBag.TotalPost;
+}
+
+<!-- New Question -->
+<div class="new-question topic">
+    @{Html.RenderAction("DisplayQuestion", "Question");}
+</div>
+<!-- End New Question -->
+<!-- Topic -->
+<div class="statistics py-md-4">
+    <div class="container">
+        <div class="category">
+            <span class="semi-bold">Statistics</span>
+        </div>
+        <div class="row semi-bold wrap-statistics" style="margin: 0">
+            <div class="col-md-4 flex-column align-center">
+                <span id="counter" style="color: #7bd0d1">  </span>
+                <span> User online </span>
+            </div>
+            <div class="col-md-4 flex-column align-center">
+                <span style="color: #e47578"> @totalUser </span>
+                <span> Total members </span>
+            </div>
+            <div class="col-md-4 flex-column align-center">
+                <span style="color: #ffc100"> @totalPost </span>
+                <span> Total post </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Topic -->
+<!-- An Other Post -->
+@*<div class="other-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="flex-column item-post semi-bold fs-md">
+                    <span class="semi-bold fs-lg" style="color: #000000"> Title post </span>
+                    <span class="author"> By <a href="#" style="color: #AA0000">Chinh Pham</a> </span>
+                    <span>What do you know about writing resources (content của bài viết ý)</span>
+                </div>
+                <a href="#" class="read-more"> Read more</a>
+            </div>
+            <div class="col-md-3">
+                <div class="flex-column item-post semi-bold fs-md">
+                    <span class="semi-bold fs-lg" style="color: #000000"> Title post </span>
+                    <span class="author"> By <a href="#" style="color: #AA0000">Chinh Pham</a> </span>
+                    <span>What do you know about writing resources (content của bài viết ý)</span>
+                </div>
+                <a href="#" class="read-more"> Read more</a>
+            </div>
+            <div class="col-md-3">
+                <div class="flex-column item-post semi-bold fs-md">
+                    <span class="semi-bold fs-lg" style="color: #000000"> Title post </span>
+                    <span class="author"> By <a href="#" style="color: #AA0000">Chinh Pham</a> </span>
+                    <span>What do you know about writing resources (content của bài viết ý)</span>
+                </div>
+                <a href="#" class="read-more"> Read more</a>
+            </div>
+            <div class="col-md-3">
+                <div class="flex-column item-post semi-bold fs-md">
+                    <span class="semi-bold fs-lg" style="color: #000000"> Title post </span>
+                    <span class="author"> By <a href="#" style="color: #AA0000">Chinh Pham</a> </span>
+                    <span>What do you know about writing resources (content của bài viết ý)</span>
+                </div>
+                <a href="#" class="read-more"> Read more</a>
+            </div>
+        </div>
+    </div>
+</div>*@
+@section scripts{
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="@Url.Content("~/signalr/hubs")"></script>
+    <script>
+        $(function () {
+            var myHub = $.connection.counterHub;
+            $.connection.hub.start().done(function () {
+
+            });
+            myHub.client.UpdateCount = function (count) {
+                $("#counter").text(count);
+            }
+        });
+    </script>
+}
+
+<!-- End An Other Post -->

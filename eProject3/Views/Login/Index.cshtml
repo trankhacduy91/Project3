@@ -1,0 +1,46 @@
+﻿@model eProject3.Models.LoginModel
+@{
+    ViewBag.Title = "Contact";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login form</title>
+    <link rel="stylesheet" href="~/Assets/client/css/cs_flex.css">
+    <link rel="stylesheet" href="~/Assets/client/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Assets/client/images/fontawesome/css/all.css">
+</head>
+<body>
+    <div class="bg-contact2 flex-row center middle"
+         style="background-image: url('../../Assets/client/images/bg-2.jpg');height:100vh">
+        <div class="container flex-column middle" style="padding: 50px">
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+                @Html.ValidationSummary(false, "", "error")
+                <span class="semi-bold fs-title align-center" style="color: #fff">SIGN IN INTO YOUR ACCOUNT</span>
+                <div class="form-icon">
+                    @Html.TextBoxFor(model => model.UserName, new { @class = "", @autufocus = "autoforcus" })
+                    <span class="fas fa-user login-form-icon"></span>
+                </div>
+                <div class="form-icon">
+                    @Html.PasswordFor(model => model.Password, new { @class = "" })
+                    <span class="fas fa-lock login-form-icon"></span>
+                </div>
+                <button style="background: #337ab7; color: #ffffff; padding: 5px 20px;width:500px"
+                        type="submit"
+                        class="btn btn-primary">
+                    Login
+                </button>
+            }
+                <div style="color: #fff; text-align: right;padding: 10px 0; width:500px" class="semi-bold">
+                    <a href="/Home/Index" style="color:#fff" class="pr-md">Back to home</a>
+                    <a href="/User/Index" style="color: #fff">Create new account</a>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

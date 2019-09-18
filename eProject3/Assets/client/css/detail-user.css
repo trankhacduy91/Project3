@@ -1,0 +1,43 @@
+.image-user img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #dedede;
+}
+.image-user{
+    padding: 25px 0;
+    background: #FCFCFC;
+}
+.interest{
+    padding: 15px 0;
+    background: #ffffff;
+}
+
+.header-info{
+    background: #DDE1E7;
+    padding: 7px 15px;
+}
+
+.detail-user{
+    padding: 7px 15px 50px 15px;
+    color: #777;
+    background: #ffffff;
+}
+
+.detail-user span{
+    padding: 5px 0;
+}
+
+.detail-user i{
+    width: 25px;
+}
+
+.user{
+    padding: 50px 0;
+}
+
+.user > span{
+    display: block;
+    color: #7f7f7f;
+    border-bottom: 3px solid #ffffff;
+}

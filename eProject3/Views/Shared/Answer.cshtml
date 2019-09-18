@@ -1,0 +1,20 @@
+﻿@model List<Model.ViewModel.QuestionViewModel>
+@foreach (var item in Model)
+{
+<div class="item-list-answer flex-row mb-3 mt-md-3">
+    <div class="avatar-user">
+        <img src="~/Assets/client/images/@item.Images" alt="">
+    </div>
+    <div class="content-answer ml-3" style="background:#fff">
+        <div class="author-answer flex-column">
+            <span class="semi-bold">From <a class="fs-lg txt-title" href="/user-@item.UserAnswerID">@item.Name</a></span>
+            <span class="fs-lg"> @item.AnswerCreatedDate</span>
+            <span class="pt-2">
+                @item.AnswerContent
+            </span>
+        </div>
+    </div>
+</div>
+}
+
+

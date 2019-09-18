@@ -1,0 +1,86 @@
+﻿@model Model.EF.User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="~/Assets/client/css/cs_flex.css">
+    <link rel="stylesheet" href="~/Assets/client/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Assets/client/images/fontawesome/css/all.css">
+</head>
+<body>
+    <div class="flex-row middle center" style="height: 100vh">
+        @using (Html.BeginForm("Update", "UserDetail", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="width:500px;margin: 0 auto">
+                <h4>Edit Information</h4>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-icon">
+                    <div class="">
+                        @Html.TextBoxFor(model => model.Name, new { placeholder = "Name", required = true })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        <span class="fas fa-user-edit login-form-icon"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-icon">
+                    <div class="">
+                        @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", required = true })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        <span class="fas fa-envelope login-form-icon"></span>
+                    </div>
+                </div>
+
+                <div class="form-icon">
+                    <div class="">
+                        @Html.TextBoxFor(model => model.Hospital, new { placeholder = "Hospital" })
+                        @Html.ValidationMessageFor(model => model.Hospital, "", new { @class = "text-danger" })
+                        <span class="fas fa-building login-form-icon"></span>
+                    </div>
+                </div>
+
+                <div class="form-icon">
+                    <div class="">
+                        @Html.TextBoxFor(model => model.Specialize, new { placeholder = "Specialize" })
+                        @Html.ValidationMessageFor(model => model.Specialize, "", new { @class = "text-danger" })
+                        <span class="fas fa-graduation-cap login-form-icon"></span>
+                    </div>
+                </div>
+
+                <div class="form-icon">
+                    <div class="">
+                        @Html.EditorFor(model => model.Experience, new { placeholder = "Specialize", @value = Model.Experience })
+                        @Html.ValidationMessageFor(model => model.Experience, "", new { @class = "text-danger" })
+                        <span class="fas fa-award login-form-icon"></span>
+                    </div>
+                </div>
+
+                <div class="form-icon">
+                    <div class="">
+                        <img src="~/Assets/client/images/@Model.Images" alt="Alternate Text" width="100" height="100" />
+                        <input type="file" name="ImageFile" />
+                        <span class="fas fa-images login-form-icon"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit"
+                           value="Update"
+                           class="btn btn-primary" />
+                </div>
+            </div>
+        }
+    </div>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,90 @@
+﻿@model Model.ViewModel.QuestionViewModel
+@{
+    ViewBag.Title = "Post Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-question">
+    <div class="container flex-column">
+        <!-- Header Detail ghi title thoi gian tao cac kieu -->
+        @if (Model.Anonymous == true)
+        {
+            <div class="header-detail flex-row">
+                <div class="avatar mr-md-3">
+                    <img src="~/Assets/client/images/Anonymous.png" alt="">
+                </div>
+                <div class="title-question semi-bold">
+                    <span class="fs-title txt-title"> @Model.Title </span>
+                    <div class="flex-row space-between" style="padding: 5px 0">
+                        <span class="semi-bold">
+                            By
+                            <a class="fs-lg txt-title">Anonymous</a>
+                            @Model.CreatedTime.ToString(string.Format("dd/MM/yyyy"))
+                        </span>
+
+                        <button class="like flex-row middle center semi-bold">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>@Model.Likes</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="header-detail flex-row">
+                <div class="avatar mr-md-3">
+                    <img src="~/Assets/client/images/@Model.Images" alt="">
+                </div>
+                <div class="title-question semi-bold">
+                    <span class="fs-title txt-title"> @Model.Title </span>
+                    <div class="flex-row space-between" style="padding: 5px 0">
+                        <span class="semi-bold">
+                            By
+                            <a class="fs-lg txt-title" href="/user-@Model.UserID">@Model.Name</a>
+                            @Model.CreatedTime.ToString(string.Format("dd/MM/yyyy"))
+                        </span>
+
+                        <button class="like flex-row middle center semi-bold">
+                            <i class="fas fa-street-view mr-1"></i>
+                            <span>@Model.Views</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- End Header Detail ghi title thoi gian tao cac kieu -->
+        <!-- Content Detail Show a post here -->
+        <div class="content-detail">
+            <p>
+                @Model.Content
+            </p>
+        </div>
+        <!-- End Content Detail Show a post here -->
+
+
+        <div class="show-answer flex-column mb-2">
+            @{Html.RenderAction("Answer", "Question", Model.ID);}
+        </div>
+
+        <!-- Reply Question -->
+        @using (Html.BeginForm("AddAnswer", "Question", FormMethod.Post))
+        {
+            <div class="reply">
+                <div class="flex-row middle">
+                    <span class="fas fa-comment-dots icon-reply txt-title"></span>
+                    <span class="txt-title semi-bold pl-2"> Reply</span>
+                </div>
+                <input type="hidden" name="QuestionID" value="@Model.ID">
+                <div class="handle-reply">
+                    <form action="#" class="flex-column">
+                        <textarea rows="5" cols="50" placeholder="Enter your reply " name="content"></textarea>
+                        <button class="btn btn-primary mt-3" type="submit">Reply</button>
+                    </form>
+                </div>
+            </div>
+        }
+        <!-- End Reply Question -->
+    </div>
+</div>
+

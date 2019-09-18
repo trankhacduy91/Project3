@@ -1,0 +1,85 @@
+﻿@*@model Model.EF.User
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="content">
+
+        <!--User -->
+        <div class="user" style="padding: 40px 0">
+            <div class="container py-md">
+                <span class="py-md fs-title semi-bold">VIEWING PROFILE - SITESPLAT</span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="image-user flex-column center middle">
+                            <img src="@Model.Images">
+                            <span class="semi-bold txt-title">@Model.Name</span>
+                            <span>Admin</span>
+                        </div>
+                        @*<div class="interest align-center flex-column">
+                            <span class="semi-bold"> Interest </span>
+                            <span> Football, Girl</span>
+                        </div>*@
+                    </div>
+                    <div class="col-md-6">
+                        <div class="header-info">
+                            <i class="fas fa-th"></i> <span class="pl-1 semi-bold" style="font-size: 18px">Bio Personal Information</span>
+                        </div>
+                        <div class="detail-user flex-column">
+                            <span><i class="fas fa-user"></i> <strong>Username</strong> @Model.UserName</span>
+                            <span><i class="fas fa-globe-europe"></i> <strong>Hospital</strong> @Model.Hospital </span>
+                            <span><i class="fas fa-envelope"></i> <strong>Email</strong> @Model.Email </span>
+                            <span><i class="fas fa-birthday-cake"></i> <strong>Age</strong> @Model.Age </span>
+                            <span><i class="fas fa-briefcase"></i> <strong>Specialize</strong> @Model.Specialize </span>
+                            <span><i class="fas fa-link"></i> <strong>Experience</strong> @Model.Experience </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End User -->
+        <!-- Post of user -->
+        @*<div class="other-post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="flex-column item-post semi-bold fs-md">
+                            <span class="semi-bold fs-lg" style="color: #000000"> Title post </span>
+                            <span class="author"> By <a href="#" style="color: #AA0000">Chinh Pham</a> </span>
+                            <span>What do you know about writing resources (content của bài viết ý)</span>
+                        </div>
+                        <a href="#" class="read-more"> Read more</a>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="flex-column item-post semi-bold fs-md">
+                            <span class="semi-bold fs-lg" style="color: #000000"> Title post </span>
+                            <span class="author"> By <a href="#" style="color: #AA0000">Chinh Pham</a> </span>
+                            <span>What do you know about writing resources (content của bài viết ý)</span>
+                        </div>
+                        <a href="#" class="read-more"> Read more</a>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="flex-column item-post semi-bold fs-md">
+                            <span class="semi-bold fs-lg" style="color: #000000"> Title post </span>
+                            <span class="author"> By <a href="#" style="color: #AA0000">Chinh Pham</a> </span>
+                            <span>What do you know about writing resources (content của bài viết ý)</span>
+                        </div>
+                        <a href="#" class="read-more"> Read more</a>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="flex-column item-post semi-bold fs-md">
+                            <span class="semi-bold fs-lg" style="color: #000000"> Title post </span>
+                            <span class="author"> By <a href="#" style="color: #AA0000">Chinh Pham</a> </span>
+                            <span>What do you know about writing resources (content của bài viết ý)</span>
+                        </div>
+                        <a href="#" class="read-more"> Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        <!-- End Post of user -->
+    </div>
+    <!-- End Content HomePage -->*@
+
+
