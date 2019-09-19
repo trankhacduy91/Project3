@@ -5,6 +5,7 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
     using Model.ViewModel;
+ 
 
     public partial class Project3DBContext : DbContext
     {
@@ -15,7 +16,7 @@ namespace Model.EF
 
         public virtual DbSet<Answer> Answers { get; set; }
         public virtual DbSet<Blog> Blogs { get; set; }
-        
+
         public virtual DbSet<Question> Questions { get; set; }
         
         public virtual DbSet<User> Users { get; set; }

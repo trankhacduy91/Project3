@@ -58,3 +58,15 @@ E:\eProject3-master\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 E:\eProject3-master\Model\obj\Debug\Model.csproj.CopyComplete
 E:\eProject3-master\Model\obj\Debug\Model.dll
 E:\eProject3-master\Model\obj\Debug\Model.pdb
+E:\My-Project-3\Model\bin\Debug\Model.dll.config
+E:\My-Project-3\Model\bin\Debug\Model.dll
+E:\My-Project-3\Model\bin\Debug\Model.pdb
+E:\My-Project-3\Model\bin\Debug\EntityFramework.dll
+E:\My-Project-3\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\My-Project-3\Model\bin\Debug\EntityFramework.xml
+E:\My-Project-3\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\My-Project-3\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\My-Project-3\Model\obj\Debug\Model.csproj.CopyComplete
+E:\My-Project-3\Model\obj\Debug\Model.dll
+E:\My-Project-3\Model\obj\Debug\Model.pdb
+E:\My-Project-3\Model\obj\Debug\Model.csprojAssemblyReference.cache

@@ -25,9 +25,9 @@ namespace eProject3.Controllers
         }
 
         [ChildActionOnly]
-        public PartialViewResult DisplayQuestion()
+        public PartialViewResult DisplayQuestion(string searchString)
         {
-            var model = new QuestionDAO().ListAllQuestion();
+            var model = new QuestionDAO().ListAllQuestion(searchString);
             ViewBag.countQuestion = model.Count();
             return PartialView(model);
         }

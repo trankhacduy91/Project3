@@ -10,6 +10,7 @@ namespace eProject3.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             ViewBag.TotalUser = new UserDAO().TotalUser();
@@ -30,6 +31,14 @@ namespace eProject3.Controllers
 
             return View();
         }
+
+        //public ActionResult Doctor()
+        //{
+
+        //    var list = (from q in db.Users
+        //                select q).Where(x =>x.IsDoctor == true). OrderBy(x => x.ID);
+        //    return View(list.ToList());
+        //}
 
         public ActionResult SendContactSuccess()
         {

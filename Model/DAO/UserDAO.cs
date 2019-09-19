@@ -20,9 +20,22 @@ namespace Model.DAO
 
         public int Insert(User entity)
         {
-            db.Users.Add(entity);
-            db.SaveChanges();
-            return entity.ID;
+            if(db.Users.Count(x => x.UserName == entity.UserName) > 0)
+            {
+                return -1;
+
+            } else
+            {
+                db.Users.Add(entity);
+                db.SaveChanges();
+                return entity.ID;
+            }
+            
+        }
+
+        public bool CheckUserName(string userName)
+        {
+            return db.Users.Count(x => x.UserName == userName) > 0;
         }
 
         public int TotalUser()

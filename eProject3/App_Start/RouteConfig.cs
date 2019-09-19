@@ -60,6 +60,8 @@ namespace eProject3
               defaults: new { controller = "UserDetail", action = "Update", id = UrlParameter.Optional }
           );
 
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "",

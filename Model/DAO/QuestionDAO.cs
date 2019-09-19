@@ -18,7 +18,7 @@ namespace Model.DAO
             db = new Project3DBContext();
         }
 
-        public List<QuestionViewModel> ListAllQuestion()
+        public List<QuestionViewModel> ListAllQuestion(string searchString)
         {
             var model = from a in db.Questions
                         join b in db.Users on a.UserID equals b.ID
@@ -36,6 +36,13 @@ namespace Model.DAO
                             Images = b.Images
 
                         };
+            
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.Title.Contains(searchString));
+                return model.OrderByDescending(x => x.CreatedTime).ToList();
+            }
             return model.OrderByDescending(x => x.CreatedTime).ToList();
         }
 

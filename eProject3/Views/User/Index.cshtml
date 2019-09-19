@@ -23,56 +23,59 @@
             {
                 @Html.AntiForgeryToken()
 
-                <div class="form-horizontal" style="width:500px;margin: 0 auto">
-                    <h4 style="color: #fff">Register</h4>
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-icon">
-                        <div>
-                            @Html.TextBoxFor(model => model.UserName, new { placeholder = "User name", required = true })
-                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                            <span class="fas fa-user login-form-icon"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-icon">
-                        <div class="">
-                            @Html.PasswordFor(model => model.Password, new { placeholder = "Password", required = true })
-                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                            <span class="fas fa-lock login-form-icon"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-icon">
-                        <div class="">                      
-                            @Html.TextBoxFor(model => model.Name, new { placeholder = "Name",
-                           pattern = @"([a-z]{2,50})",
-                           title = "First and last name cannot contain numbers, special characters. Length from 2-50 characters.",
-                           required = "required"
-                       })
-                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                            <span class="fas fa-user-edit login-form-icon"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-icon">
-                        <div class="">
-                            @Html.TextBoxFor(model => model.Email, new { type = "email",
-                           placeholder = "Email",
-                           pattern = @"[a-z][a-z0-9_\.]{1,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}",
-                           title = "Please enter the correct format",
-                           required = "required"
-                       })
-                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                            <span class="fas fa-envelope login-form-icon"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit"
-                               value="Register"
-                               class="btn btn-primary" />
+            <div class="form-horizontal" style="width:500px;margin: 0 auto">
+                <h4 style="color: #fff">Register</h4>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-icon">
+                    <div>
+                        @Html.TextBoxFor(model => model.UserName, new { placeholder = "User name", required = true })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        <span class="fas fa-user login-form-icon"></span>
                     </div>
                 </div>
+                <div class="form-icon">
+                    <div class="">
+                        @Html.PasswordFor(model => model.Password, new { placeholder = "Password", required = true })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        <span class="fas fa-lock login-form-icon"></span>
+                    </div>
+                </div>
+                <div class="form-icon" hidden>
+                    <div class="">
+                        @Html.PasswordFor(model => model.Role, new { placeholder = "Password", required = true, value = "MEMBER" })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        <span class="fas fa-lock login-form-icon"></span>
+                    </div>
+                </div>
+                <div class="form-icon">
+                    <div class="">
+                        @Html.TextBoxFor(model => model.Name, new { placeholder = "Name",
+                       pattern = @".{2,50}[a-z]",
+                       title = "First and last name cannot contain numbers, special characters. Length from 2-50 characters.",
+                       required = "required"
+                   })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        <span class="fas fa-user-edit login-form-icon"></span>
+                    </div>
+                </div>
+                <div class="form-icon">
+                    <div class="">
+                        @Html.TextBoxFor(model => model.Email, new { type = "email",
+                       placeholder = "Email",
+                       pattern = @"[a-z][a-z0-9_\.]{1,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}",
+                       title = "Please enter the correct format",
+                       required = "required"
+                   })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        <span class="fas fa-envelope login-form-icon"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit"
+                           value="Register"
+                           class="btn btn-primary" />
+                </div>
+            </div>
             }
             <div class="flex-row semi-bold">
                 <a href="/Home/Index" style="color: #fff">Back to home</a>

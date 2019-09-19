@@ -23,6 +23,7 @@ namespace eProject3.Controllers
             long id = dao.Insert(user);
             if (ModelState.IsValid)
             {
+
                 if (id > 0)
                 {
                     return RedirectToAction("Index", "Login");
@@ -30,8 +31,9 @@ namespace eProject3.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Error!!!");
+                    ModelState.AddModelError("", "Account already exists!!!");
                 }
+                             
             }
             return View("Index");
         }
