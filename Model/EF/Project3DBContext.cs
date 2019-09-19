@@ -18,7 +18,7 @@ namespace Model.EF
         public virtual DbSet<Blog> Blogs { get; set; }
 
         public virtual DbSet<Question> Questions { get; set; }
-        
+        public virtual DbSet<CategoryY> CategoryY { get; set; }
         public virtual DbSet<User> Users { get; set; }
         
         public virtual DbSet<Contact> Contacts { get; set; }

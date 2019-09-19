@@ -21,5 +21,19 @@ namespace Model.DAO
             db.SaveChanges();
             return entity.ID;
         }
+
+        public List<User> SearchDoctor(string searchDoctor)
+        {
+            var model =  db.Users.Where(x => x.IsDoctor == true);
+                       
+                        
+
+            if (!String.IsNullOrEmpty(searchDoctor))
+            {
+                model = model.Where(x => x.Name.Contains(searchDoctor));
+                return model.ToList();
+            }
+            return model.ToList();
+        }
     }
 }

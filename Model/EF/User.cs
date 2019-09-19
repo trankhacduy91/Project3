@@ -41,6 +41,10 @@ namespace Model.EF
         [StringLength(250)]
         public string Images { get; set; }
 
+        public bool IsDoctor { get; set; }
+
+        public int? CategoryID { get; set; }
+
         [NotMapped]
         public HttpPostedFileBase ImageFile { get; set; }
 

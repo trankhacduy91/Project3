@@ -10,7 +10,7 @@ namespace eProject3.Controllers
 {
     public class HomeController : Controller
     {
-        
+        Project3DBContext db = new Project3DBContext();
         public ActionResult Index()
         {
             ViewBag.TotalUser = new UserDAO().TotalUser();
@@ -25,6 +25,7 @@ namespace eProject3.Controllers
             return View();
         }
 
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -32,13 +33,15 @@ namespace eProject3.Controllers
             return View();
         }
 
-        //public ActionResult Doctor()
-        //{
+       
+        public ActionResult Doctor(string searchDoctor)
+        {
 
-        //    var list = (from q in db.Users
-        //                select q).Where(x =>x.IsDoctor == true). OrderBy(x => x.ID);
-        //    return View(list.ToList());
-        //}
+            var model = new ContactDAO().SearchDoctor(searchDoctor);
+            return View(model.ToList());
+            
+
+        }
 
         public ActionResult SendContactSuccess()
         {
@@ -57,11 +60,11 @@ namespace eProject3.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("","Send Contact Unsuccessfully !");
+                    ModelState.AddModelError("", "Send Contact Unsuccessfully !");
                 }
             }
             return View("Contact");
-            
+
         }
     }
 }

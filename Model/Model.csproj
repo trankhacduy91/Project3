@@ -54,6 +54,7 @@
     <Compile Include="DAO\ContactDAO.cs" />
     <Compile Include="DAO\QuestionDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="EF\CategoryY.cs" />
     <Compile Include="EF\Answer.cs" />
     <Compile Include="EF\Blog.cs" />
     <Compile Include="EF\Contact.cs" />
