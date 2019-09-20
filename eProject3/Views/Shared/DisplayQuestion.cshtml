@@ -44,6 +44,15 @@
     </div>  <!-- End Modal -->
 
     <div class="container">
+        @using (Html.BeginForm())
+        {
+            <div>
+                <div class="flex-row my-md-2" style="width:500px; margin-left: auto">
+                    @Html.TextBox("searchString") <br />
+                    <input type="submit" value="Search" class="btn btn-primary" style="width: 100px" />
+                </div>
+            </div>
+        }
         <div class="category">
             <span class="semi-bold">New Question</span>
         </div>
@@ -71,13 +80,11 @@
                                     </div>
                                 </div>
                             </td>
-
                             <td class="fs-md semi-bold">
                                 <div>
                                     <span>Views: @item.Views</span>
                                 </div>
                             </td>
-
                             <td>
                                 <div class="author-category">
                                     <div class="flex-row middle">
@@ -85,11 +92,8 @@
                                         <span style="color:  #AA0000;" class="semi-bold">Anonymous</span>
                                     </div>
                                     <p class="fs-md">@item.CreatedTime.ToString(string.Format("dd/MM/yyyy"))</p>
-
                                 </div>
-
                             </td>
-
                         </tr>
                     }
                     else
@@ -105,14 +109,12 @@
                                     </div>
                                 </div>
                             </td>
-
                             <td class="fs-md semi-bold">
                                 <div>
                                     <span>Views: @item.Views</span>
                                 </div>
-                              
-                            </td>
 
+                            </td>
                             <td>
                                 <div class="author-category">
                                     <div class="flex-row middle">
@@ -120,18 +122,11 @@
                                         <span style="color:  #AA0000;" class="semi-bold"><a href="/user-@item.UserID">@item.Name</a></span>
                                     </div>
                                     <p class="fs-md">@item.CreatedTime.ToString(string.Format("dd/MM/yyyy"))</p>
-                                    
-
-
                                 </div>
-
                             </td>
-
                         </tr>
                     }
                 }
-
-
 
 
             </tbody>
