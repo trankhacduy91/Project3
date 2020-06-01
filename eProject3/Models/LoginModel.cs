@@ -15,5 +15,7 @@ namespace eProject3.Models
         public string Password { set; get; }
 
         public bool RememberMe { set; get; }
+
+        public bool IsDoctor { get; set; }
     }
 }

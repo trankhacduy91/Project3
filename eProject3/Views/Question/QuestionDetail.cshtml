@@ -68,7 +68,7 @@
         </div>
 
         <!-- Reply Question -->
-        @using (Html.BeginForm("AddAnswer", "Question", FormMethod.Post))
+        @using (Html.BeginForm("QuestionDetail", "Question", FormMethod.Post))
         {
             <div class="reply">
                 <div class="flex-row middle">
@@ -78,7 +78,13 @@
                 <input type="hidden" name="QuestionID" value="@Model.ID">
                 <div class="handle-reply">
                     <form action="#" class="flex-column">
-                        <textarea rows="5" cols="50" placeholder="Enter your reply " name="content"></textarea>
+                        @*<textarea rows="5" cols="50" placeholder="Enter your reply " name="content" required></textarea>*@
+
+                        @Html.TextAreaFor(x => x.AnswerContent, new { placeholder = "Your Answer..."})
+                        <div style="font-size: 50px;">
+                        @Html.ValidationMessageFor(model => model.AnswerContent, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
                         <button class="btn btn-primary mt-3" type="submit">Reply</button>
                     </form>
                 </div>

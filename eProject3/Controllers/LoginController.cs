@@ -46,7 +46,7 @@ namespace eProject3.Controllers
                 }
             }
             
-            return View("Index");
+            return View("Index", model);
         }
     }
 }

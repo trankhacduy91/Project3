@@ -2,6 +2,7 @@
 using Model.DAO;
 using Model.EF;
 using Model.Models;
+using Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace eProject3.Controllers
 
         public ActionResult QuestionDetail(int id)
         {
-            var question = new QuestionDAO().getQuestionByID(id);
+            QuestionViewModel question = new QuestionDAO().getQuestionByID(id);
             return View(question);
         }
 
@@ -48,6 +49,7 @@ namespace eProject3.Controllers
         }
 
         [HttpPost]
+
         public ActionResult NewQuestion(Question question)
         {
             
@@ -62,34 +64,49 @@ namespace eProject3.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Add new question unsuccessfully!. ");
+                    return View("Index",question);
                 }
             }
-            return RedirectToAction("Index", "Question");
+            return View("Index",question);
         }
 
         [HttpPost]
-        public ActionResult AddAnswer(AnswerVM obj)
+        public ActionResult QuestionDetail(QuestionViewModel obj)
         {
+            QuestionViewModel question = new QuestionDAO().getQuestionByID(obj.ID);
             var session = Session[CommonConstants.USER_SESSION];
 
             if (session == null)
             {
                 return RedirectToAction("Index", "Login");
             }
-            else {
-                int userId = Convert.ToInt32(((UserLogin)session).UserId);
-                Project3DBContext db = new Project3DBContext();
-                Answer answer = new Answer();
-                answer.QuestionID = obj.QuestionID;
-                answer.Content = obj.Content;
-                answer.UserID = userId;
-                answer.CreatedTime = DateTime.Now;
-                db.Answers.Add(answer);
-                db.SaveChanges();
-                return RedirectToAction("QuestionDetail", new { id = obj.QuestionID });
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    int userId = Convert.ToInt32(((UserLogin)session).UserId);
+                    Project3DBContext db = new Project3DBContext();
+                    Answer answer = new Answer();
+                    answer.QuestionID = obj.ID;
+                    answer.Content = obj.AnswerContent;
+                    answer.UserID = userId;
+                    answer.CreatedTime = DateTime.Now;
+                    db.Answers.Add(answer);
+                    db.SaveChanges();
+                    return RedirectToAction("QuestionDetail", new { id = obj.ID });
+                }
+                else
+                {
+                    obj.Title = question.Title;
+                    obj.Images = question.Images;
+                    obj.Views = question.Views;
+                    obj.Content = question.Content;
+                    obj.CreatedTime = question.CreatedTime;
+                    return View("QuestionDetail",obj);
+                }
+                
             }
         }
-        
+
     }
 }

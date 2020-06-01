@@ -16,9 +16,11 @@ namespace Model.EF
         public int ID { get; set; }
 
         [StringLength(100)]
+        [Required(ErrorMessage = "Please enter Title.")]
         public string Title { get; set; }
 
         [StringLength(255)]
+        [Required(ErrorMessage = "Please enter Content.")]
         public string Content { get; set; }
 
         public DateTime CreatedTime { get; set; }

@@ -50,16 +50,13 @@ namespace Model.DAO
             {
                 var user = db.Users.Find(entity.ID);
                 
-                string fileName = Path.GetFileName(entity.ImageFile.FileName);
-                
                 user.Name = entity.Name;
                 user.Email = entity.Email;
                 user.Experience = entity.Experience;
                 user.Hospital = entity.Hospital;
                 user.Specialize = entity.Specialize;
+                user.Age = entity.Age;
                 
-                user.Images = fileName;
-               
                 db.SaveChanges();
                 return true;
             }
@@ -77,7 +74,7 @@ namespace Model.DAO
 
         public User getUserByID(int id )
         {
-            return db.Users.SingleOrDefault(x => x.ID == id);
+            return db.Users.Find(id);
         }
 
         public bool Login(string userName, string passWord)

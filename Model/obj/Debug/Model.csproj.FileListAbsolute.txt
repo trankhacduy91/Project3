@@ -70,3 +70,14 @@ E:\My-Project-3\Model\obj\Debug\Model.csproj.CopyComplete
 E:\My-Project-3\Model\obj\Debug\Model.dll
 E:\My-Project-3\Model\obj\Debug\Model.pdb
 E:\My-Project-3\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Project3\Project3\Model\bin\Debug\Model.dll.config
+D:\Project3\Project3\Model\bin\Debug\Model.dll
+D:\Project3\Project3\Model\bin\Debug\Model.pdb
+D:\Project3\Project3\Model\bin\Debug\EntityFramework.dll
+D:\Project3\Project3\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project3\Project3\Model\bin\Debug\EntityFramework.xml
+D:\Project3\Project3\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project3\Project3\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Project3\Project3\Model\obj\Debug\Model.dll
+D:\Project3\Project3\Model\obj\Debug\Model.pdb
+D:\Project3\Project3\Model\obj\Debug\Model.csprojAssemblyReference.cache

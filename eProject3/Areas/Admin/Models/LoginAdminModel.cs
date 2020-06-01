@@ -8,7 +8,7 @@ namespace eProject3.Areas.Admin.Models
 {
     public class LoginAdminModel
     {
-        [Key]
+       
         [Required(ErrorMessage = "Please enter UserName")]
         public string UserName { set; get; }
 

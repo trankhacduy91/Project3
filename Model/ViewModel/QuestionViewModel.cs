@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace Model.ViewModel
         public string Name { get; set; }
 
         public string Images { get; set; }
-
+        [Required(ErrorMessage = "Please input answer content.")]
         public string AnswerContent { get; set; }
 
         public DateTime AnswerCreatedDate{get;set;}
